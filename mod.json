@@ -256,6 +256,10 @@
 		{
 			"Path": "command/chat/eject.nut",
 			"RunOn": "SERVER && MP"
+		},
+		{
+			"Path": "command/chat/SpacebasedCannon.nut",
+			"RunOn": "SERVER && MP"
 		}
 	]
 }

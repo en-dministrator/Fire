@@ -19,6 +19,7 @@ void function FireCommand_Init()
     ServerChatCommand_Csb_Init()
     if( !IsLobby() && !IsMenuLevel() )
     {
+        SpacebasedCannon_Init()
         ServerChatCommand_Core_Init()
         ServerChatCommand_Tp_Init()
         ServerChatCommand_Fold_Init()
