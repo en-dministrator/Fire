@@ -162,7 +162,7 @@
 			"RunOn": "SERVER && MP"
 		},
 		{
-			"Path": "command/chat/chat.nut",
+			"Path": "command/chat/cl_chat.nut",
 			"RunOn": "SERVER && MP"
 		},
 		{
@@ -194,7 +194,7 @@
 			"RunOn": "SERVER && MP"
 		},
 		{
-			"Path": "command/chat/mute.nut",
+			"Path": "command/chat/cl_mute.nut",
 			"RunOn": "SERVER && MP"
 		},
 		{
