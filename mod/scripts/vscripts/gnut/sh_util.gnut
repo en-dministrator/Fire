@@ -1,0 +1,42 @@
+untyped
+global function Fire_IsAffirmative
+global function Fire_IsNegative
+global function hasNonDigit
+global function isdigit
+global function RoundFloat
+
+bool function Fire_IsAffirmative(string input)
+{
+    string lowerInput = input.tolower()
+    
+    return ( lowerInput == "on" || lowerInput == "true" || lowerInput == "1" || lowerInput == "yes" || lowerInput == "enable" || lowerInput == "enabled" || lowerInput == "start" )
+}
+
+bool function Fire_IsNegative(string input)
+{
+    string lowerInput = input.tolower()
+
+    return ( lowerInput == "off" || lowerInput == "false" || lowerInput == "0" || lowerInput == "no" || lowerInput == "disable" || lowerInput == "disabled" || lowerInput == "stop" )
+}
+
+bool function hasNonDigit(str) {
+    foreach(ch in str)
+    {
+        if(ch < '0' || ch > '9')
+        {
+            return true
+        }
+    }
+    return false
+}
+
+bool function isdigit(ch)
+{
+    return ch >= '0' && ch <= '9'
+}
+
+float function RoundFloat(float value, int decimalPlaces)
+{
+    float factor = pow(10, decimalPlaces)
+    return floor(value * factor + 0.5) / factor
+}

@@ -67,7 +67,7 @@
 			}
 		},
 		{
-			"Path": "gnut/Fire.gnut",
+			"Path": "gnut/sh_util.gnut",
 			"RunOn": "MP"
 		},
 		{
