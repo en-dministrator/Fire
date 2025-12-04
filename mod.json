@@ -31,10 +31,17 @@
 	],
 	"Scripts": [
 		{
-			"Path": "sh_fire.nut",
-			"RunOn": "MP",
+			"Path": "sv_fire.nut",
+			"RunOn": "SERVER && MP",
 			"ServerCallback": {
 				"After": "Fire_Init"
+			}
+		},
+		{
+			"Path": "sv_version.nut",
+			"RunOn": "SERVER && MP",
+			"ServerCallback": {
+				"After": "FireVersion_Init"
 			}
 		},
 		{

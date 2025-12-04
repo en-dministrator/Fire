@@ -2,6 +2,7 @@ global function ServerChatCommand_Admin_Init
 global function Fire_GetAdminArray
 global function Fire_IsPlayerAdmin
 global function Fire_SetPlayerAdmin
+global function Fire_NotifyAllAdmins
 
 void function ServerChatCommand_Admin_Init()
 {
@@ -101,4 +102,13 @@ string function join(array<string> strings, string separator)
     }
     
     return result
+}
+
+void function Fire_NotifyAllAdmins(string msg)
+{
+    array<entity> admins = Fire_GetAdminArray()
+    foreach(admin in admins)
+    {
+        Fire_ChatServerPrivateMessage(admin, msg)
+    }
 }
