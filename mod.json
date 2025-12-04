@@ -106,7 +106,7 @@
 		},
 
 		{
-			"Path": "command/admin.nut",
+			"Path": "command/sv_admin.nut",
 			"RunOn": "SERVER && MP"
 		},
 		{
