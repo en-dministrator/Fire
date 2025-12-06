@@ -3,6 +3,7 @@ global function FireCommand_Init
 
 void function FireCommand_Init()
 {
+    ConsoleCommand_Fire_Init()
     ServerChatCommand_Admin_Init()
     ServerChatCommand_Cheats_Init()
     ServerChatCommand_Team_Init()

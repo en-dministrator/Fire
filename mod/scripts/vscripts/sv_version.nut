@@ -1,5 +1,6 @@
 untyped
 global function FireVersion_Init
+global function Fire_GetVersion
 global function Fire_IsDevVersion
 global function Fire_HasNewVersion
 global function Fire_GetLatestVersion

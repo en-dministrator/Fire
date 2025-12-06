@@ -113,6 +113,11 @@
 		},
 
 		{
+			"Path": "command/console/sv_fire.nut",
+			"RunOn": "SERVER && MP"
+		},
+
+		{
 			"Path": "command/sv_admin.nut",
 			"RunOn": "SERVER && MP"
 		},
