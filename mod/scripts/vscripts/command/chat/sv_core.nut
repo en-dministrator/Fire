@@ -1,11 +1,11 @@
-global function ServerChatCommand_Core_Init
+global function ChatCommand_Core_Init
 
-void function ServerChatCommand_Core_Init()
+void function ChatCommand_Core_Init()
 {
-    AddChatCommandCallback( "/core", ServerChatCommand_Core )
+    AddChatCommandCallback( "/core", ChatCommand_Core )
 }
 
-void function ServerChatCommand_Core(entity player, array<string> args)
+void function ChatCommand_Core(entity player, array<string> args)
 {
     if(!Fire_IsPlayerAdmin(player)){
         Fire_ChatServerPrivateMessage(player, "你没有管理员权限")

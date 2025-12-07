@@ -1,13 +1,13 @@
-global function ServerChatCommand_Chat_Init
+global function ChatCommand_Chat_Init
 global function Fire_SetChatEnabled
 global function Fire_IsChatEnabled
 
-void function ServerChatCommand_Chat_Init()
+void function ChatCommand_Chat_Init()
 {
-    AddChatCommandCallback( "/chat", OnChatCommand_Chat )
+    AddChatCommandCallback( "/chat", ChatCommand_Chat )
 }
 
-void function OnChatCommand_Chat( entity player, array<string> args )
+void function ChatCommand_Chat( entity player, array<string> args )
 {
     if ( !Fire_IsPlayerAdmin( player ) )
     {

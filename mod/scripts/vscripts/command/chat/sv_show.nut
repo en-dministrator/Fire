@@ -1,11 +1,11 @@
-global function ServerChatCommand_Show_Init
+global function ChatCommand_Show_Init
 
-void function ServerChatCommand_Show_Init()
+void function ChatCommand_Show_Init()
 {
-    AddChatCommandCallback( "/show", ServerChatCommand_Show )
+    AddChatCommandCallback( "/show", ChatCommand_Show )
 }
 
-void function ServerChatCommand_Show(entity player, array<string> args)
+void function ChatCommand_Show(entity player, array<string> args)
 {
     if(!Fire_IsPlayerAdmin(player)){
         Fire_ChatServerPrivateMessage(player, "你没有管理员权限")

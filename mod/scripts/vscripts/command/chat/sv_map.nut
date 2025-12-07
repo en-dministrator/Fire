@@ -1,13 +1,13 @@
-global function ServerChatCommand_Map_Init
+global function ChatCommand_Map_Init
 
 bool For = false
 
-void function ServerChatCommand_Map_Init()
+void function ChatCommand_Map_Init()
 {
-    AddChatCommandCallback( "/map", ServerChatCommand_Map )
+    AddChatCommandCallback( "/map", ChatCommand_Map )
 }
 
-void function ServerChatCommand_Map(entity player, array<string> args)
+void function ChatCommand_Map(entity player, array<string> args)
 {
     if( !Fire_IsPlayerAdmin( player ) ){
         Fire_ChatServerPrivateMessage(player, "你没有管理员权限")

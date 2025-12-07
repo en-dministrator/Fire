@@ -1,14 +1,14 @@
-global function ServerChatCommand_Ban_Init
+global function ChatCommand_Ban_Init
 global function Fire_BanPlayer
 
 bool debug = false
 
-void function ServerChatCommand_Ban_Init()
+void function ChatCommand_Ban_Init()
 {
-    AddChatCommandCallback("/ban", ServerChatCommand_Ban)
+    AddChatCommandCallback("/ban", ChatCommand_Ban)
 }
 
-void function ServerChatCommand_Ban(entity player, array<string> args)
+void function ChatCommand_Ban(entity player, array<string> args)
 {
     if( !Fire_IsPlayerAdmin( player ) ){
         Fire_ChatServerPrivateMessage(player, "你没有管理员权限")

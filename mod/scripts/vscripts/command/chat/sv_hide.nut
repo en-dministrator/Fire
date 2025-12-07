@@ -1,11 +1,11 @@
-global function ServerChatCommand_Hide_Init
+global function ChatCommand_Hide_Init
 
-void function ServerChatCommand_Hide_Init()
+void function ChatCommand_Hide_Init()
 {
-    AddChatCommandCallback( "/hide", ServerChatCommand_Hide )
+    AddChatCommandCallback( "/hide", ChatCommand_Hide )
 }
 
-void function ServerChatCommand_Hide(entity player, array<string> args)
+void function ChatCommand_Hide(entity player, array<string> args)
 {
     if(!Fire_IsPlayerAdmin(player)){
         Fire_ChatServerPrivateMessage(player, "你没有管理员权限")

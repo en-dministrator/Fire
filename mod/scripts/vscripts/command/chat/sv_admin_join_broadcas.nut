@@ -1,13 +1,13 @@
-global function ServerChatCommand_Ajb_Init
+global function ChatCommand_Ajb_Init
 global function Fire_SetAdminJoinBroadcastEnabled
 global function Fire_IsAdminJoinBroadcastEnabled
 
 
-void function ServerChatCommand_Ajb_Init()
+void function ChatCommand_Ajb_Init()
 {
     AddCallback_OnClientConnected(OnClientConnected)
     AddCallback_OnClientDisconnected(OnPlayerDisconnected)
-    AddChatCommandCallback( "/ajb", ServerChatCommand_Ajb )
+    AddChatCommandCallback( "/ajb", ChatCommand_Ajb )
 }
 
 void function OnClientConnected(entity player)
@@ -53,7 +53,7 @@ void function OnClientDisconnected(entity player)
     }
 }
 
-void function ServerChatCommand_Ajb( entity player, array<string> args )
+void function ChatCommand_Ajb( entity player, array<string> args )
 {
     if( !Fire_IsPlayerAdmin( player ) ){
         Fire_ChatServerPrivateMessage(player, "你没有管理员权限")

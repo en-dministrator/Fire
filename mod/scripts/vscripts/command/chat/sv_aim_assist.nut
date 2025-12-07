@@ -1,14 +1,14 @@
-global function ServerChatCommand_Aa_Init
+global function ChatCommand_Aa_Init
 global function Fire_SetAimAssistEnabled
 global function Fire_IsAimAssistEnabled
 
-void function ServerChatCommand_Aa_Init()
+void function ChatCommand_Aa_Init()
 {
-    AddChatCommandCallback( "/aa",  ServerChatCommand_Aa )
+    AddChatCommandCallback( "/aa",  ChatCommand_Aa )
     AddCallback_OnPlayerRespawned( OnPlayerRespawned )
 }
 
-void function ServerChatCommand_Aa(entity player, array<string> args)
+void function ChatCommand_Aa(entity player, array<string> args)
 {
     if( !Fire_IsPlayerAdmin( player ) ){
         Fire_ChatServerPrivateMessage(player, "你没有管理员权限")

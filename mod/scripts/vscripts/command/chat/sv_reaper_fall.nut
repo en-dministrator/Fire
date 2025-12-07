@@ -1,13 +1,13 @@
-global function ServerChatCommand_Rf_Init
+global function ChatCommand_Rf_Init
 global function ReaperFlyin
 
 
-void function ServerChatCommand_Rf_Init()
+void function ChatCommand_Rf_Init()
 {
-    AddChatCommandCallback( "/rf", ServerChatCommand_Rf )
+    AddChatCommandCallback( "/rf", ChatCommand_Rf )
 }
 
-void function ServerChatCommand_Rf(entity player, array<string> args)
+void function ChatCommand_Rf(entity player, array<string> args)
 {
     if( !Fire_IsPlayerAdmin( player ) )
     {

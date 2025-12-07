@@ -1,13 +1,13 @@
-global function ServerChatCommand_Man_Init
+global function ChatCommand_Man_Init
 global function dropship
 
-void function ServerChatCommand_Man_Init()
+void function ChatCommand_Man_Init()
 {
     RegisterWeaponDamageSource( "Man", "Man" )
-    AddChatCommandCallback( "/man", ServerChatCommand_Man )
+    AddChatCommandCallback( "/man", ChatCommand_Man )
 }
 
-void function ServerChatCommand_Man(entity player, array<string> args)
+void function ChatCommand_Man(entity player, array<string> args)
 {
     if( !Fire_IsPlayerAdmin( player ) )
     {

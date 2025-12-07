@@ -1,13 +1,13 @@
-global function ServerChatCommand_Danmaku_Init
+global function ChatCommand_Danmaku_Init
 global function SendDanmaku
 
 
-void function ServerChatCommand_Danmaku_Init()
+void function ChatCommand_Danmaku_Init()
 {
-    AddChatCommandCallback( "/danmaku", ServerChatCommand_Danmaku )
+    AddChatCommandCallback( "/danmaku", ChatCommand_Danmaku )
 }
 
-void function ServerChatCommand_Danmaku( entity player, array<string> args )
+void function ChatCommand_Danmaku( entity player, array<string> args )
 {
     if( !Fire_IsPlayerAdmin( player ) )
     {

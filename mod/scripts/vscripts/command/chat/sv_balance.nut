@@ -1,4 +1,4 @@
-global function ServerChatCommand_Bal_Init
+global function ChatCommand_Bal_Init
 global function Fire_IsValidBalanceMode
 global function Fire_Balance
 global function Fire_BalanceByNumber
@@ -11,12 +11,12 @@ struct PlayerScoreData
     int score
 }
 
-void function ServerChatCommand_Bal_Init()
+void function ChatCommand_Bal_Init()
 {
-    AddChatCommandCallback("/bal", ServerChatCommand_Balance)
+    AddChatCommandCallback("/bal", ChatCommand_Balance)
 }
 
-void function ServerChatCommand_Balance(entity player, array<string> args)
+void function ChatCommand_Balance(entity player, array<string> args)
 {
     if( !Fire_IsPlayerAdmin( player ) )
     {

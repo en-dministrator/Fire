@@ -1,12 +1,12 @@
-global function ServerChatCommand_Stop_Init
+global function ChatCommand_Stop_Init
 
 
-void function ServerChatCommand_Stop_Init()
+void function ChatCommand_Stop_Init()
 {
-    AddChatCommandCallback( "/stop",  ServerChatCommand_Stop )
+    AddChatCommandCallback( "/stop",  ChatCommand_Stop )
 }
 
-void function ServerChatCommand_Stop(entity player, array<string> args)
+void function ChatCommand_Stop(entity player, array<string> args)
 {
     if( !Fire_IsPlayerAdmin( player ) )
     {

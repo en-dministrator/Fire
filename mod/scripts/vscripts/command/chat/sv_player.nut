@@ -1,12 +1,12 @@
-global function ServerChatCommand_Pl_Init
+global function ChatCommand_Pl_Init
 
 
-void function ServerChatCommand_Pl_Init()
+void function ChatCommand_Pl_Init()
 {
-    AddChatCommandCallback( "/pl", ServerChatCommand_Pl )
+    AddChatCommandCallback( "/pl", ChatCommand_Pl )
 }
 
-void function ServerChatCommand_Pl(entity player, array<string> args)
+void function ChatCommand_Pl(entity player, array<string> args)
 {
     if(args.len() != 0){
         Fire_ChatServerPrivateMessage(player, "用法: /pl")

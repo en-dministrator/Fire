@@ -1,11 +1,11 @@
-global function ServerChatCommand_Fly_Init
+global function ChatCommand_Fly_Init
 
-void function ServerChatCommand_Fly_Init()
+void function ChatCommand_Fly_Init()
 {
-    AddChatCommandCallback( "/fly", ServerChatCommand_Fly )
+    AddChatCommandCallback( "/fly", ChatCommand_Fly )
 }
 
-void function ServerChatCommand_Fly(entity player, array<string> args)
+void function ChatCommand_Fly(entity player, array<string> args)
 {
     if( !Fire_IsPlayerAdmin( player ) ){
         Fire_ChatServerPrivateMessage(player, "你没有管理员权限")

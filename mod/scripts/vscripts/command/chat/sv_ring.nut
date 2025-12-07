@@ -1,4 +1,4 @@
-global function ServerChatCommand_Ring_Init
+global function ChatCommand_Ring_Init
 global function CreateRing
 
 struct RingData
@@ -10,16 +10,16 @@ struct RingData
 
 array<RingData> rings = []
 
-void function ServerChatCommand_Ring_Init()
+void function ChatCommand_Ring_Init()
 {
     PrecacheSprite( $"materials/vgui/hud/weapons/target_ring_mid_pilot.vmt" )
     PrecacheSprite( $"materials/vgui/hud/weapons/target_ring_front_pilot.vmt" )
     PrecacheSprite( $"materials/vgui/hud/weapons/target_ring_back.vmt" )
 
-    AddChatCommandCallback( "/ring", ServerChatCommand_Ring )
+    AddChatCommandCallback( "/ring", ChatCommand_Ring )
 }
 
-void function ServerChatCommand_Ring(entity player, array<string> args)
+void function ChatCommand_Ring(entity player, array<string> args)
 {
     if(!Fire_IsPlayerAdmin(player))
     {

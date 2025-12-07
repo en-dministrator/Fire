@@ -14,7 +14,7 @@ void function FireVersion_Init()
 {
     FireModVersion = NSGetModVersionByModName("Fire")
     AddCallback_OnClientConnected(OnClientConnected)
-    AddChatCommandCallback("/checkver", OnChatCommand_CheckVer)
+    AddChatCommandCallback("/checkver", ChatCommand_CheckVer)
     thread CheckForNewVersion()
 }
 
@@ -28,7 +28,7 @@ void function OnClientConnected(entity player)
         )
     }
 }
-void function OnChatCommand_CheckVer(entity player, array<string> args)
+void function ChatCommand_CheckVer(entity player, array<string> args)
 {
     if(!Fire_IsPlayerAdmin(player)){
         Fire_ChatServerPrivateMessage(player, "你没有管理员权限")

@@ -1,12 +1,12 @@
-global function ServerChatCommand_Kill_Init
+global function ChatCommand_Kill_Init
 global function Fire_KillAllPlayers
 
-void function ServerChatCommand_Kill_Init()
+void function ChatCommand_Kill_Init()
 {
-    AddChatCommandCallback( "/kill", ServerChatCommand_Kill )
+    AddChatCommandCallback( "/kill", ChatCommand_Kill )
 }
 
-void function ServerChatCommand_Kill(entity player, array<string> args)
+void function ChatCommand_Kill(entity player, array<string> args)
 {
     if(!Fire_IsPlayerAdmin(player)){
         Fire_ChatServerPrivateMessage(player, "你没有管理员权限")

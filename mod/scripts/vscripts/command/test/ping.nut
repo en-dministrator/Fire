@@ -1,7 +1,7 @@
-global function Test_ServerChatCommand_Ping_Init
+global function Test_ChatCommand_Ping_Init
 
 
-void function Test_ServerChatCommand_Ping_Init()
+void function Test_ChatCommand_Ping_Init()
 {
     PrecacheSprite( $"materials/vgui/hud/weapons/target_ring_mid_pilot.vmt" )
     PrecacheSprite( $"materials/vgui/hud/weapons/target_ring_front_pilot.vmt" )

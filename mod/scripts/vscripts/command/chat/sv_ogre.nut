@@ -1,13 +1,13 @@
 untyped
-global function ServerChatCommand_Ogre_Init
+global function ChatCommand_Ogre_Init
 global function Fire_DropNukeTitan
 
-void function ServerChatCommand_Ogre_Init()
+void function ChatCommand_Ogre_Init()
 {
-    AddChatCommandCallback( "/ogre", ServerChatCommand_Ogre )
+    AddChatCommandCallback( "/ogre", ChatCommand_Ogre )
 }
 
-void function ServerChatCommand_Ogre(entity player, array<string> args)
+void function ChatCommand_Ogre(entity player, array<string> args)
 {
     if(!Fire_IsPlayerAdmin(player))
     {

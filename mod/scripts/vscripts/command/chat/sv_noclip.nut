@@ -1,12 +1,12 @@
-global function ServerChatCommand_Noclip_Init
+global function ChatCommand_Noclip_Init
 global function Fire_Noclip
 
-void function ServerChatCommand_Noclip_Init()
+void function ChatCommand_Noclip_Init()
 {
-    AddChatCommandCallback( "/noclip", ServerChatCommand_Noclip )
+    AddChatCommandCallback( "/noclip", ChatCommand_Noclip )
 }
 
-void function ServerChatCommand_Noclip(entity player, array<string> args)
+void function ChatCommand_Noclip(entity player, array<string> args)
 {
     if( !Fire_IsPlayerAdmin( player ) ){
         Fire_ChatServerPrivateMessage(player, "你没有管理员权限")

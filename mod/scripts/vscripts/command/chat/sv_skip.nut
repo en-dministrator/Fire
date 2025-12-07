@@ -1,12 +1,12 @@
-global function ServerChatCommand_Skip_Init
+global function ChatCommand_Skip_Init
 global function Fire_Skip
 
-void function ServerChatCommand_Skip_Init()
+void function ChatCommand_Skip_Init()
 {
-    AddChatCommandCallback( "/skip", ServerChatCommand_Skip )
+    AddChatCommandCallback( "/skip", ChatCommand_Skip )
 }
 
-void function ServerChatCommand_Skip(entity player, array<string> args)
+void function ChatCommand_Skip(entity player, array<string> args)
 {
     if( !Fire_IsPlayerAdmin( player ) )
     {

@@ -1,17 +1,17 @@
-global function SpacebasedCannon_Init
+global function ChatCommand_SpacebasedCannon_Init
 
 bool Test = false
 
-void function SpacebasedCannon_Init()
+void function ChatCommand_SpacebasedCannon_Init()
 {
     RegisterWeaponDamageSource( "SpacebasedCannon", "Space-based Cannon" )
     
-    AddChatCommandCallback("/sbc", ServerChatCommand_Spacebased_Cannon)
+    AddChatCommandCallback("/sbc", ChatCommand_Spacebased_Cannon)
     if(Test)
-        AddChatCommandCallback("/sbc_test_fx", ServerChatCommand_TestFX)
+        AddChatCommandCallback("/sbc_test_fx", ChatCommand_TestFX)
 }
 
-void function ServerChatCommand_TestFX(entity player, array<string> args)
+void function ChatCommand_TestFX(entity player, array<string> args)
 {
     vector playerOrigin = player.GetOrigin()
     vector offset = <0, 100, 0>
@@ -31,7 +31,7 @@ void function ServerChatCommand_TestFX(entity player, array<string> args)
     }
 }
 
-void function ServerChatCommand_Spacebased_Cannon(entity player, array<string> args)
+void function ChatCommand_Spacebased_Cannon(entity player, array<string> args)
 {
     if( !Fire_IsPlayerAdmin(player) )
     {

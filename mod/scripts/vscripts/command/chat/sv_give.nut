@@ -1,14 +1,14 @@
-global function ServerChatCommand_Give_Init
+global function ChatCommand_Give_Init
 global function Fire_Give
 global function Fire_GiveWeapon
 global function Fire_GiveMelee
 
-void function ServerChatCommand_Give_Init()
+void function ChatCommand_Give_Init()
 {
-    AddChatCommandCallback( "/give", ServerChatCommand_Give )
+    AddChatCommandCallback( "/give", ChatCommand_Give )
 }
 
-void function ServerChatCommand_Give( entity player, array<string> args )
+void function ChatCommand_Give( entity player, array<string> args )
 {
     if ( !Fire_IsPlayerAdmin( player ) ){
         Fire_ChatServerPrivateMessage( player, "你没有管理员权限" )

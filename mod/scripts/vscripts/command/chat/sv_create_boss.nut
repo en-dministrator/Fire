@@ -1,4 +1,4 @@
-global function ServerChatCommand_Cb_Init
+global function ChatCommand_Cb_Init
 global function Fire_KillAllBoss
 global function CreateAsh
 global function CreateViper
@@ -9,15 +9,15 @@ global function CreateBlisk
 
 array<entity> bosss = []
 
-void function ServerChatCommand_Cb_Init()
+void function ChatCommand_Cb_Init()
 {
     RegisterSignal( "AshEnteredPhaseShift" )
     RegisterSignal( "DoCore" )
-    AddChatCommandCallback( "/cb",  ServerChatCommand_CreateBoss )
-    AddChatCommandCallback( "/kab",  ServerChatCommand_KillAllBoss )
+    AddChatCommandCallback( "/cb",  ChatCommand_CreateBoss )
+    AddChatCommandCallback( "/kab",  ChatCommand_KillAllBoss )
 }
 
-void function ServerChatCommand_CreateBoss(entity player, array<string> args)
+void function ChatCommand_CreateBoss(entity player, array<string> args)
 {
     if( !Fire_IsPlayerAdmin( player ) )
     {
@@ -68,7 +68,7 @@ void function ServerChatCommand_CreateBoss(entity player, array<string> args)
     Fire_ChatServerPrivateMessage(player, "创建成功")
 }
 
-void function ServerChatCommand_KillAllBoss(entity player, array<string> args)
+void function ChatCommand_KillAllBoss(entity player, array<string> args)
 {
     if( !Fire_IsPlayerAdmin( player ) )
     {

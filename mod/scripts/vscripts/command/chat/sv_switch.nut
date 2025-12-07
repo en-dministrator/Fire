@@ -2,10 +2,10 @@ global function ChatCommand_Switch_Init
 
 void function ChatCommand_Switch_Init()
 {
-    AddChatCommandCallback( "/swit", OnChatCommand_Switch )
+    AddChatCommandCallback( "/swit", ChatCommand_Switch )
 }
 
-void function OnChatCommand_Switch(entity player, array<string> args)
+void function ChatCommand_Switch(entity player, array<string> args)
 {
     if( !Fire_IsPlayerAdmin( player ) ){
         Fire_ChatServerPrivateMessage(player, "你没有管理员权限")

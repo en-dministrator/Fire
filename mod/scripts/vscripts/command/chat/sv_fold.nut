@@ -1,4 +1,4 @@
-global function ServerChatCommand_Fold_Init
+global function ChatCommand_Fold_Init
 global function FoldWeapon
 global function HudMsgSend
 global function PlayFinishBeepSound
@@ -21,17 +21,17 @@ const array<string> FOLD_WEAPON_SOUNDS = [
     "coop_generator_underattack_alarm"
 ]
 
-void function ServerChatCommand_Fold_Init()
+void function ChatCommand_Fold_Init()
 {
 	FlagInit("Fold_FoldWeaponStart")
 	FlagInit("Fold_FoldWeaponStop")
 	FlagInit("Fold_CoopGeneratorUnderattackAlarmStop")
 
 	RegisterWeaponDamageSource("FoldWeapon", "Fold Weapon")
-	AddChatCommandCallback("/fold", ServerChatCommand_Fold)
+	AddChatCommandCallback("/fold", ChatCommand_Fold)
 }
 
-void function ServerChatCommand_Fold(entity player, array<string> args)
+void function ChatCommand_Fold(entity player, array<string> args)
 {
 	if(!Fire_IsPlayerAdmin(player)){
 		Fire_ChatServerPrivateMessage(player, "你没有管理员权限")

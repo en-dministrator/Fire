@@ -1,16 +1,16 @@
-global function ServerChatCommand_Hack_Init
+global function ChatCommand_Hack_Init
 
 const int PLAYER_TEAM = 2
 const int HACK_TEAM = 3
 
 entity HACK_PLAYER = null
 
-void function ServerChatCommand_Hack_Init()
+void function ChatCommand_Hack_Init()
 {
     AddCallback_OnClientConnected( OnClientConnected )
     AddCallback_OnPlayerRespawned( OnPlayerRespawned )
     AddCallback_OnClientDisconnected( OnPlayerDisconnected )
-    AddChatCommandCallback( "/hack", ServerChatCommand_Hack )
+    AddChatCommandCallback( "/hack", ChatCommand_Hack )
 }
 
 void function OnClientConnected( entity player )
@@ -45,7 +45,7 @@ void function OnPlayerDisconnected( entity player )
     thread StopHackMode()
 }
 
-void function ServerChatCommand_Hack( entity player, array<string> args )
+void function ChatCommand_Hack( entity player, array<string> args )
 {
     if( !Fire_IsPlayerAdmin( player ) )
     {

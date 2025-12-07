@@ -1,4 +1,4 @@
-global function ServerChatCommand_Mute_Init
+global function ChatCommand_Mute_Init
 global function Fire_MutePlayer
 global function Fire_UnmutePlayer
 global function Fire_IsMutePlayer
@@ -6,13 +6,13 @@ global function Fire_GetPlayerMuteEndTime
 
 table< string, float > mutedPlayers = {}
 
-void function ServerChatCommand_Mute_Init()
+void function ChatCommand_Mute_Init()
 {
-    AddChatCommandCallback( "/mute", OnChatCommand_Mute )
-    AddChatCommandCallback( "/unmute", OnChatCommand_Unmute )
+    AddChatCommandCallback( "/mute", ChatCommand_Mute )
+    AddChatCommandCallback( "/unmute", ChatCommand_Unmute )
 }
 
-void function OnChatCommand_Mute( entity player, array<string> args )
+void function ChatCommand_Mute( entity player, array<string> args )
 {
     if ( !Fire_IsPlayerAdmin( player ) )
     {
@@ -84,7 +84,7 @@ void function OnChatCommand_Mute( entity player, array<string> args )
     Fire_ChatServerPrivateMessage( player, "已禁言玩家 " + targetPlayer.GetPlayerName() + " " + muteDuration + " 秒" )
 }
 
-void function OnChatCommand_Unmute( entity player, array<string> args )
+void function ChatCommand_Unmute( entity player, array<string> args )
 {
     if ( !Fire_IsPlayerAdmin( player ) )
     {
