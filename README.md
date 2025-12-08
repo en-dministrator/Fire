@@ -68,6 +68,8 @@ Fire_AdminUIDs "1013199872353,1234567890123,9876543210987"
 - `/swit <name/all/imc/militia>`
 - `/money <name/all> <money>`
 - `/reserve <TeamReserve>`
+- `/script <code>`
+- `/reload`
 
 # 控制台命令
 - `fire`
@@ -85,9 +87,9 @@ Fire_AdminUIDs "1013199872353,1234567890123,9876543210987"
 ## **示例代码（聊天命令）**
 
 ```squirrel
-AddChatCommandCallback("/hello", OnChatCommand)
+AddChatCommandCallback("/hello", ChatCommand_Hellp)
 
-void function OnChatCommand(entity player, array<string> args)
+void function ChatCommand_Hellp(entity player, array<string> args)
 {
     Fire_ChatServerPrivateMessage( player, "hello " + player.GetPlayerName() )
 }
@@ -107,40 +109,11 @@ void function OnChatCommand(entity player, array<string> args)
 ## **示例代码（控制台命令）**
 
 ```squirrel
-AddConsoleCommandCallback("hello", OnConsoleCommand)
+AddConsoleCommandCallback("hello", ConsoleCommand_Hellp)
 
-bool function OnConsoleCommand(entity player, array<string> args)
+bool function ConsoleCommand_Hellp(entity player, array<string> args)
 {
     Fire_ChatServerPrivateMessage( player, "hello " + player.GetPlayerName() )
     return true
 }
 ```
-
-# 更新日志
-
-## v1.3.0
-
-### 新功能
-
-- 新增 `fire` 控制台命令，用于显示插件信息
-- 新增 `/swit` 聊天命令，管理员可以切换指定玩家的阵营
-- 新增 `/money` 和 `/reserve` 聊天命令，仅在边境模式下可用，支持发放金钱和设置团队预留
-
-## v1.2.1
-
-### 修复
-
-- 修复了开发版本检测逻辑中的错误，正确识别包含"-dev"后缀的版本
-
-## v1.2.0
-
-### 新功能
-
-- 添加版本检测功能，管理员会自动收到新版本通知
-- 新增 /checkver 命令，允许管理员手动检查版本更新
-
-### 改进与重构
-
-- 所有聊天命令脚本文件重命名为 `sv_` 前缀。
-- 提取通用工具函数到 sh_util.gnut。
-- 重构HUD消息优先级队列系统。
