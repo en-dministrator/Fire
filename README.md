@@ -70,6 +70,7 @@ Fire_AdminUIDs "1013199872353,1234567890123,9876543210987"
 - `/reserve <TeamReserve>`
 - `/script <code>`
 - `/reload`
+- `/command <command>`
 
 # 控制台命令
 - `fire`
