@@ -303,6 +303,10 @@
 		{
 			"Path": "command/chat/sv_loadout.nut",
 			"RunOn": "SERVER && MP"
+		},
+		{
+			"Path": "command/chat/sv_sound.nut",
+			"RunOn": "SERVER && MP"
 		}
 	]
 }
