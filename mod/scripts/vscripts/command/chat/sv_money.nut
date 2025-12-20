@@ -2,10 +2,10 @@ global function ChatCommand_Money_Init
 
 void function ChatCommand_Money_Init()
 {
-    AddChatCommandCallback( "/money", ChatCommand_Money )
+    AddChatCommandCallback( "/money", ChatCommand_Money_Threaded )
 }
 
-void function ChatCommand_Money( entity player, array<string> args )
+void function ChatCommand_Money_Threaded( entity player, array<string> args )
 {
     if( !Fire_IsPlayerAdmin( player ) ){
         Fire_ChatServerPrivateMessage( player, "你没有管理员权限" )

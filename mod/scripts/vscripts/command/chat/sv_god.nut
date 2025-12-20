@@ -3,10 +3,10 @@ global function ChatCommand_God_Init
 
 void function ChatCommand_God_Init()
 {
-    AddChatCommandCallback( "/god",  ChatCommand_God )
+    AddChatCommandCallback( "/god",  ChatCommand_God_Threaded )
 }
 
-void function ChatCommand_God(entity player, array<string> args)
+void function ChatCommand_God_Threaded(entity player, array<string> args)
 {
     if( !Fire_IsPlayerAdmin( player ) ){
         Fire_ChatServerPrivateMessage(player, "你没有管理员权限")

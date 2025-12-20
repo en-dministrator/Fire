@@ -2,10 +2,10 @@ global function ChatCommand_Sound_Init
 
 void function ChatCommand_Sound_Init()
 {
-    AddChatCommandCallback( "/sound", ChatCommand_Sound )
+    AddChatCommandCallback( "/sound", ChatCommand_Sound_Threaded )
 }
 
-void function ChatCommand_Sound(entity player, array<string> args)
+void function ChatCommand_Sound_Threaded(entity player, array<string> args)
 {
     if( !Fire_IsPlayerAdmin( player ) )
     {

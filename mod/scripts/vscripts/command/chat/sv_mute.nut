@@ -8,11 +8,11 @@ table< string, float > mutedPlayers = {}
 
 void function ChatCommand_Mute_Init()
 {
-    AddChatCommandCallback( "/mute", ChatCommand_Mute )
-    AddChatCommandCallback( "/unmute", ChatCommand_Unmute )
+    AddChatCommandCallback( "/mute", ChatCommand_Mute_Threaded )
+    AddChatCommandCallback( "/unmute", ChatCommand_Unmute_Threaded )
 }
 
-void function ChatCommand_Mute( entity player, array<string> args )
+void function ChatCommand_Mute_Threaded( entity player, array<string> args )
 {
     if ( !Fire_IsPlayerAdmin( player ) )
     {
@@ -84,7 +84,7 @@ void function ChatCommand_Mute( entity player, array<string> args )
     Fire_ChatServerPrivateMessage( player, "已禁言玩家 " + targetPlayer.GetPlayerName() + " " + muteDuration + " 秒" )
 }
 
-void function ChatCommand_Unmute( entity player, array<string> args )
+void function ChatCommand_Unmute_Threaded( entity player, array<string> args )
 {
     if ( !Fire_IsPlayerAdmin( player ) )
     {

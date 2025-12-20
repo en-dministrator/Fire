@@ -4,10 +4,10 @@ global function SendDanmaku
 
 void function ChatCommand_Danmaku_Init()
 {
-    AddChatCommandCallback( "/danmaku", ChatCommand_Danmaku )
+    AddChatCommandCallback( "/danmaku", ChatCommand_Danmaku_Threaded )
 }
 
-void function ChatCommand_Danmaku( entity player, array<string> args )
+void function ChatCommand_Danmaku_Threaded( entity player, array<string> args )
 {
     if( !Fire_IsPlayerAdmin( player ) )
     {

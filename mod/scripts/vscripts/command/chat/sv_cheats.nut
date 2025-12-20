@@ -4,10 +4,10 @@ global function Fire_IsCheatsEnabled
 
 void function ChatCommand_Cheats_Init()
 {
-    AddChatCommandCallback( "/cheats", ChatCommand_Cheats )
+    AddChatCommandCallback( "/cheats", ChatCommand_Cheats_Threaded )
 }
 
-void function ChatCommand_Cheats(entity player, array<string> args)
+void function ChatCommand_Cheats_Threaded(entity player, array<string> args)
 {
     if( !Fire_IsPlayerAdmin( player ) ){
         Fire_ChatServerPrivateMessage(player, "你没有管理员权限")

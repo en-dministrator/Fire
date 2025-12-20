@@ -4,10 +4,10 @@ global function Fire_IsChatEnabled
 
 void function ChatCommand_Chat_Init()
 {
-    AddChatCommandCallback( "/chat", ChatCommand_Chat )
+    AddChatCommandCallback( "/chat", ChatCommand_Chat_Threaded )
 }
 
-void function ChatCommand_Chat( entity player, array<string> args )
+void function ChatCommand_Chat_Threaded( entity player, array<string> args )
 {
     if ( !Fire_IsPlayerAdmin( player ) )
     {

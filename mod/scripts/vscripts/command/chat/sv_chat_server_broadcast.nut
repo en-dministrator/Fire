@@ -2,10 +2,10 @@ global function ChatCommand_Csb_Init
 
 void function ChatCommand_Csb_Init()
 {
-    AddChatCommandCallback( "/csb", ChatCommand_Csb )
+    AddChatCommandCallback( "/csb", ChatCommand_Csb_Threaded )
 }
 
-void function ChatCommand_Csb(entity player, array<string> args)
+void function ChatCommand_Csb_Threaded(entity player, array<string> args)
 {
     if( !Fire_IsPlayerAdmin( player ) )
     {

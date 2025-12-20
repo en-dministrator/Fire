@@ -5,10 +5,10 @@ global function Fire_GiveMelee
 
 void function ChatCommand_Give_Init()
 {
-    AddChatCommandCallback( "/give", ChatCommand_Give )
+    AddChatCommandCallback( "/give", ChatCommand_Give_Threaded )
 }
 
-void function ChatCommand_Give( entity player, array<string> args )
+void function ChatCommand_Give_Threaded( entity player, array<string> args )
 {
     if ( !Fire_IsPlayerAdmin( player ) ){
         Fire_ChatServerPrivateMessage( player, "你没有管理员权限" )

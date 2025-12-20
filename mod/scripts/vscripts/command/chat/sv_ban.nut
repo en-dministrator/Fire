@@ -5,10 +5,10 @@ bool debug = false
 
 void function ChatCommand_Ban_Init()
 {
-    AddChatCommandCallback("/ban", ChatCommand_Ban)
+    AddChatCommandCallback("/ban", ChatCommand_Ban_Threaded)
 }
 
-void function ChatCommand_Ban(entity player, array<string> args)
+void function ChatCommand_Ban_Threaded(entity player, array<string> args)
 {
     if( !Fire_IsPlayerAdmin( player ) ){
         Fire_ChatServerPrivateMessage(player, "你没有管理员权限")

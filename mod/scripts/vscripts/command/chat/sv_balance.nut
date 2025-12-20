@@ -13,10 +13,10 @@ struct PlayerScoreData
 
 void function ChatCommand_Bal_Init()
 {
-    AddChatCommandCallback("/bal", ChatCommand_Balance)
+    AddChatCommandCallback("/bal", ChatCommand_Balance_Threaded)
 }
 
-void function ChatCommand_Balance(entity player, array<string> args) 
+void function ChatCommand_Balance_Threaded(entity player, array<string> args) 
 {
     if( !Fire_IsPlayerAdmin(player) ) {
         Fire_ChatServerPrivateMessage(player, "你没有管理员权限")

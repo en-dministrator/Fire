@@ -6,10 +6,10 @@ global function Fire_NotifyAllAdmins
 
 void function ChatCommand_Admin_Init()
 {
-    AddChatCommandCallback( "/admin", ChatCommand_Admin )
+    AddChatCommandCallback( "/admin", ChatCommand_Admin_Threaded )
 }
 
-void function ChatCommand_Admin( entity player, array<string> args )
+void function ChatCommand_Admin_Threaded( entity player, array<string> args )
 {
     Fire_ChatServerPrivateMessage( player, "开发中..." )
 }

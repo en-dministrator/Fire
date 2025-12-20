@@ -4,10 +4,10 @@ global function ReaperFlyin
 
 void function ChatCommand_Rf_Init()
 {
-    AddChatCommandCallback( "/rf", ChatCommand_Rf )
+    AddChatCommandCallback( "/rf", ChatCommand_Rf_Threaded )
 }
 
-void function ChatCommand_Rf(entity player, array<string> args)
+void function ChatCommand_Rf_Threaded(entity player, array<string> args)
 {
     if( !Fire_IsPlayerAdmin( player ) )
     {

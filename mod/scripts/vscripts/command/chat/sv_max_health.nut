@@ -2,10 +2,10 @@ global function ChatCommand_Mhp_Init
 
 void function ChatCommand_Mhp_Init()
 {
-    AddChatCommandCallback( "/mhp", ChatCommand_Mhp )
+    AddChatCommandCallback( "/mhp", ChatCommand_Mhp_Threaded )
 }
 
-void function ChatCommand_Mhp(entity player, array<string> args)
+void function ChatCommand_Mhp_Threaded(entity player, array<string> args)
 {
     if( !Fire_IsPlayerAdmin(player) ){
         Fire_ChatServerPrivateMessage( player, "你没有管理员权限" )

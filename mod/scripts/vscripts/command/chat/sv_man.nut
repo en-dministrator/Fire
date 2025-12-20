@@ -4,10 +4,10 @@ global function dropship
 void function ChatCommand_Man_Init()
 {
     RegisterWeaponDamageSource( "Man", "Man" )
-    AddChatCommandCallback( "/man", ChatCommand_Man )
+    AddChatCommandCallback( "/man", ChatCommand_Man_Threaded )
 }
 
-void function ChatCommand_Man(entity player, array<string> args)
+void function ChatCommand_Man_Threaded(entity player, array<string> args)
 {
     if( !Fire_IsPlayerAdmin( player ) )
     {

@@ -16,10 +16,10 @@ void function ChatCommand_Ring_Init()
     PrecacheSprite( $"materials/vgui/hud/weapons/target_ring_front_pilot.vmt" )
     PrecacheSprite( $"materials/vgui/hud/weapons/target_ring_back.vmt" )
 
-    AddChatCommandCallback( "/ring", ChatCommand_Ring )
+    AddChatCommandCallback( "/ring", ChatCommand_Ring_Threaded )
 }
 
-void function ChatCommand_Ring(entity player, array<string> args)
+void function ChatCommand_Ring_Threaded(entity player, array<string> args)
 {
     if(!Fire_IsPlayerAdmin(player))
     {

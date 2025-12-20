@@ -8,7 +8,7 @@ void function ChatCommand_Afk_Init()
 {
     RegisterSignal( "Fire_AntiAFK_Stop" )
     AddCallback_OnPlayerRespawned( OnPlayerRespawned )
-    AddChatCommandCallback( "/afk", ChatCommand_AntiAFK )
+    AddChatCommandCallback( "/afk", ChatCommand_AntiAFK_Threaded )
 }
 
 void function OnPlayerRespawned( entity player )
@@ -62,7 +62,7 @@ void function AntiAFKMonitor( entity player )
     }
 }
 
-void function ChatCommand_AntiAFK( entity player, array<string> args )
+void function ChatCommand_AntiAFK_Threaded( entity player, array<string> args )
 {
     if( !Fire_IsPlayerAdmin( player ) )
     {

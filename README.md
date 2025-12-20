@@ -90,9 +90,9 @@ Fire_AdminUIDs "1013199872353,1234567890123,9876543210987"
 ## **示例代码（聊天命令）**
 
 ```squirrel
-AddChatCommandCallback("/hello", ChatCommand_Hellp)
+AddChatCommandCallback( "/hello", ChatCommand_Hellp_Threaded )
 
-void function ChatCommand_Hellp(entity player, array<string> args)
+void function ChatCommand_Hellp_Threaded( entity player, array<string> args )
 {
     Fire_ChatServerPrivateMessage( player, "hello " + player.GetPlayerName() )
 }
@@ -112,9 +112,9 @@ void function ChatCommand_Hellp(entity player, array<string> args)
 ## **示例代码（控制台命令）**
 
 ```squirrel
-AddConsoleCommandCallback("hello", ConsoleCommand_Hellp)
+AddConsoleCommandCallback( "hello", ConsoleCommand_Hellp )
 
-bool function ConsoleCommand_Hellp(entity player, array<string> args)
+bool function ConsoleCommand_Hellp( entity player, array<string> args )
 {
     Fire_ChatServerPrivateMessage( player, "hello " + player.GetPlayerName() )
     return true

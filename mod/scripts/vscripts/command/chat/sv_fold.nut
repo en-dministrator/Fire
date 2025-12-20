@@ -28,10 +28,10 @@ void function ChatCommand_Fold_Init()
 	FlagInit("Fold_CoopGeneratorUnderattackAlarmStop")
 
 	RegisterWeaponDamageSource("FoldWeapon", "Fold Weapon")
-	AddChatCommandCallback("/fold", ChatCommand_Fold)
+	AddChatCommandCallback("/fold", ChatCommand_Fold_Threaded)
 }
 
-void function ChatCommand_Fold(entity player, array<string> args)
+void function ChatCommand_Fold_Threaded(entity player, array<string> args)
 {
 	if(!Fire_IsPlayerAdmin(player)){
 		Fire_ChatServerPrivateMessage(player, "你没有管理员权限")

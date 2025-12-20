@@ -3,10 +3,10 @@ global function Fire_Skip
 
 void function ChatCommand_Skip_Init()
 {
-    AddChatCommandCallback( "/skip", ChatCommand_Skip )
+    AddChatCommandCallback( "/skip", ChatCommand_Skip_Threaded )
 }
 
-void function ChatCommand_Skip(entity player, array<string> args)
+void function ChatCommand_Skip_Threaded(entity player, array<string> args)
 {
     if( !Fire_IsPlayerAdmin( player ) )
     {

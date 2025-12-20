@@ -3,10 +3,10 @@ global function ChatCommand_Stop_Init
 
 void function ChatCommand_Stop_Init()
 {
-    AddChatCommandCallback( "/stop",  ChatCommand_Stop )
+    AddChatCommandCallback( "/stop",  ChatCommand_Stop_Threaded )
 }
 
-void function ChatCommand_Stop(entity player, array<string> args)
+void function ChatCommand_Stop_Threaded(entity player, array<string> args)
 {
     if( !Fire_IsPlayerAdmin( player ) )
     {

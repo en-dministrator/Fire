@@ -4,10 +4,10 @@ bool For = false
 
 void function ChatCommand_Map_Init()
 {
-    AddChatCommandCallback( "/map", ChatCommand_Map )
+    AddChatCommandCallback( "/map", ChatCommand_Map_Threaded )
 }
 
-void function ChatCommand_Map(entity player, array<string> args)
+void function ChatCommand_Map_Threaded(entity player, array<string> args)
 {
     if( !Fire_IsPlayerAdmin( player ) ){
         Fire_ChatServerPrivateMessage(player, "你没有管理员权限")

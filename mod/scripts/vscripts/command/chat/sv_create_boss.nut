@@ -13,11 +13,11 @@ void function ChatCommand_Cb_Init()
 {
     RegisterSignal( "AshEnteredPhaseShift" )
     RegisterSignal( "DoCore" )
-    AddChatCommandCallback( "/cb",  ChatCommand_CreateBoss )
-    AddChatCommandCallback( "/kab",  ChatCommand_KillAllBoss )
+    AddChatCommandCallback( "/cb",  ChatCommand_CreateBoss_Threaded )
+    AddChatCommandCallback( "/kab",  ChatCommand_KillAllBoss_Threaded )
 }
 
-void function ChatCommand_CreateBoss(entity player, array<string> args)
+void function ChatCommand_CreateBoss_Threaded(entity player, array<string> args)
 {
     if( !Fire_IsPlayerAdmin( player ) )
     {
@@ -68,7 +68,7 @@ void function ChatCommand_CreateBoss(entity player, array<string> args)
     Fire_ChatServerPrivateMessage(player, "创建成功")
 }
 
-void function ChatCommand_KillAllBoss(entity player, array<string> args)
+void function ChatCommand_KillAllBoss_Threaded(entity player, array<string> args)
 {
     if( !Fire_IsPlayerAdmin( player ) )
     {

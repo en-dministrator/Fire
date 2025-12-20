@@ -2,10 +2,10 @@ global function ChatCommand_Uid_Init
 
 void function ChatCommand_Uid_Init()
 {
-    AddChatCommandCallback( "/uid", ChatCommand_Uid )
+    AddChatCommandCallback( "/uid", ChatCommand_Uid_Threaded )
 }
 
-void function ChatCommand_Uid( entity player, array<string> args )
+void function ChatCommand_Uid_Threaded( entity player, array<string> args )
 {
     if(args.len() != 1){
         Fire_ChatServerPrivateMessage(player, "用法: /uid < name >")

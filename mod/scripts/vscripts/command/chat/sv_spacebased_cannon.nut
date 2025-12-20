@@ -8,10 +8,10 @@ void function ChatCommand_SpacebasedCannon_Init()
     
     AddChatCommandCallback("/sbc", ChatCommand_Spacebased_Cannon)
     if(Test)
-        AddChatCommandCallback("/sbc_test_fx", ChatCommand_TestFX)
+        AddChatCommandCallback("/sbc_test_fx", ChatCommand_TestFX_Threaded)
 }
 
-void function ChatCommand_TestFX(entity player, array<string> args)
+void function ChatCommand_TestFX_Threaded(entity player, array<string> args)
 {
     vector playerOrigin = player.GetOrigin()
     vector offset = <0, 100, 0>

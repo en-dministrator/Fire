@@ -2,10 +2,10 @@ global function ChatCommand_Command_Init
 
 void function ChatCommand_Command_Init()
 {
-    AddChatCommandCallback( "/command", ChatCommand_Command )
+    AddChatCommandCallback( "/command", ChatCommand_Command_Threaded )
 }
 
-void function ChatCommand_Command(entity player, array<string> args)
+void function ChatCommand_Command_Threaded(entity player, array<string> args)
 {
     if( !Fire_IsPlayerAdmin( player ) ){
         Fire_ChatServerPrivateMessage(player, "你没有管理员权限")

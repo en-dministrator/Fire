@@ -10,7 +10,7 @@ void function ChatCommand_Hack_Init()
     AddCallback_OnClientConnected( OnClientConnected )
     AddCallback_OnPlayerRespawned( OnPlayerRespawned )
     AddCallback_OnClientDisconnected( OnPlayerDisconnected )
-    AddChatCommandCallback( "/hack", ChatCommand_Hack )
+    AddChatCommandCallback( "/hack", ChatCommand_Hack_Threaded )
 }
 
 void function OnClientConnected( entity player )
@@ -45,7 +45,7 @@ void function OnPlayerDisconnected( entity player )
     thread StopHackMode()
 }
 
-void function ChatCommand_Hack( entity player, array<string> args )
+void function ChatCommand_Hack_Threaded( entity player, array<string> args )
 {
     if( !Fire_IsPlayerAdmin( player ) )
     {

@@ -7,7 +7,7 @@ void function ChatCommand_Ajb_Init()
 {
     AddCallback_OnClientConnected(OnClientConnected)
     AddCallback_OnClientDisconnected(OnPlayerDisconnected)
-    AddChatCommandCallback( "/ajb", ChatCommand_Ajb )
+    AddChatCommandCallback( "/ajb", ChatCommand_Ajb_Threaded )
 }
 
 void function OnClientConnected(entity player)
@@ -53,7 +53,7 @@ void function OnClientDisconnected(entity player)
     }
 }
 
-void function ChatCommand_Ajb( entity player, array<string> args )
+void function ChatCommand_Ajb_Threaded( entity player, array<string> args )
 {
     if( !Fire_IsPlayerAdmin( player ) ){
         Fire_ChatServerPrivateMessage(player, "你没有管理员权限")

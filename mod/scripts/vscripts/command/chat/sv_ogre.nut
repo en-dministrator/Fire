@@ -4,10 +4,10 @@ global function Fire_DropNukeTitan
 
 void function ChatCommand_Ogre_Init()
 {
-    AddChatCommandCallback( "/ogre", ChatCommand_Ogre )
+    AddChatCommandCallback( "/ogre", ChatCommand_Ogre_Threaded )
 }
 
-void function ChatCommand_Ogre(entity player, array<string> args)
+void function ChatCommand_Ogre_Threaded(entity player, array<string> args)
 {
     if(!Fire_IsPlayerAdmin(player))
     {

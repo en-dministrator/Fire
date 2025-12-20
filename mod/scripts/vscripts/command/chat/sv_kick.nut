@@ -5,10 +5,10 @@ bool debug = false
 
 void function ChatCommand_Kick_Init()
 {
-    AddChatCommandCallback( "/kick", ChatCommand_Kick )
+    AddChatCommandCallback( "/kick", ChatCommand_Kick_Threaded )
 }
 
-void function ChatCommand_Kick(entity player, array<string> args)
+void function ChatCommand_Kick_Threaded(entity player, array<string> args)
 {
     if( !Fire_IsPlayerAdmin( player ) ){
         Fire_ChatServerPrivateMessage(player, "你没有管理员权限")

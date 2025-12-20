@@ -2,10 +2,10 @@ global function ChatCommand_Reserve_Init
 
 void function ChatCommand_Reserve_Init()
 {
-    AddChatCommandCallback( "/reserve", ChatCommand_Reserve )
+    AddChatCommandCallback( "/reserve", ChatCommand_Reserve_Threaded )
 }
 
-void function ChatCommand_Reserve( entity player, array<string> args )
+void function ChatCommand_Reserve_Threaded( entity player, array<string> args )
 {
     if( !Fire_IsPlayerAdmin( player ) ){
         Fire_ChatServerPrivateMessage( player, "你没有管理员权限" )

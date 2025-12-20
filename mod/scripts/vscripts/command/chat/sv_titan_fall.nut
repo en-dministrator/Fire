@@ -3,10 +3,10 @@ global function Fire_Titanfall
 
 void function ChatCommand_Tf_Init()
 {
-    AddChatCommandCallback( "/tf", ChatCommand_Tf )
+    AddChatCommandCallback( "/tf", ChatCommand_Tf_Threaded )
 }
 
-void function ChatCommand_Tf(entity player, array<string> args)
+void function ChatCommand_Tf_Threaded(entity player, array<string> args)
 {
     if(!Fire_IsPlayerAdmin(player)){
         Fire_ChatServerPrivateMessage(player, "你没有管理员权限")
