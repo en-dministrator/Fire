@@ -101,17 +101,14 @@
 			"RunOn": "SERVER && MP"
 		},
 		{
-			"Path": "/callback/ConsoleCommands.gnut",
-			"RunOn": "SERVER && MP"
+			"Path": "/callback/sv_console_command.gnut",
+			"RunOn": "SERVER"
 		},
 		{
-			"Path": "/callback/ChatCommands.gnut",
-			"RunOn": "CLIENT || SERVER",
-			"ClientCallback": {
-				"After": "ChatCommands_Init"
-			},
+			"Path": "/callback/sv_chat_command.gnut",
+			"RunOn": "SERVER",
 			"ServerCallback": {
-				"After": "ChatCommands_Init"
+				"After": "ChatCommand_Init"
 			}
 		},
 
