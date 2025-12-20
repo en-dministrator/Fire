@@ -308,6 +308,10 @@
 		{
 			"Path": "command/chat/sv_send_msg.nut",
 			"RunOn": "SERVER && MP"
+		},
+		{
+			"Path": "command/chat/sv_model.nut",
+			"RunOn": "SERVER && MP"
 		}
 	]
 }
