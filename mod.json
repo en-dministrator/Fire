@@ -254,7 +254,7 @@
 			"RunOn": "SERVER && MP"
 		},
 		{
-			"Path": "command/chat/sv_chat_server_broadcast.nut",
+			"Path": "command/chat/sv_broadcast.nut",
 			"RunOn": "SERVER && MP"
 		},
 		{

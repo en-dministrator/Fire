@@ -35,7 +35,7 @@ Fire_AdminUIDs "1013199872353,1234567890123,9876543210987"
 - `/kab`
 - `/cheats <on/off>`
 - `/core <name/all/imc/militia> <core>`
-- `/csb msg`
+- `/bcst <message>`
 - `/danmaku msg`
 - `/tf <name/all/imc/militia>`
 - `/eject <name/all/imc/militia>`
