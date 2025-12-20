@@ -22,6 +22,7 @@ void function FireCommand_Init()
     ChatCommand_Script_Init()
     ChatCommand_Command_Init()
     ChatCommand_Sound_Init()
+    ChatCommand_SendMsg_Init()
     if( !IsFFAGame() )
     {
         ChatCommand_Switch_Init()
