@@ -38,6 +38,17 @@
 			}
 		},
 		{
+			"Path": "sv_admin.nut",
+			"RunOn": "SERVER && MP"
+		},
+		{
+			"Path": "sv_command.nut",
+			"RunOn": "SERVER && MP",
+			"ServerCallback": {
+				"After": "FireCommand_Init"
+			}
+		},
+		{
 			"Path": "sv_version.nut",
 			"RunOn": "SERVER && MP",
 			"ServerCallback": {
@@ -49,13 +60,6 @@
 			"RunOn": "SERVER",
 			"ServerCallback": {
 				"After": "FireChat_Init"
-			}
-		},
-		{
-			"Path": "command/sv_command.nut",
-			"RunOn": "SERVER && MP",
-			"ServerCallback": {
-				"After": "FireCommand_Init"
 			}
 		},
 		{
@@ -111,14 +115,8 @@
 				"After": "ChatCommand_Init"
 			}
 		},
-
 		{
 			"Path": "command/console/sv_fire.nut",
-			"RunOn": "SERVER && MP"
-		},
-
-		{
-			"Path": "command/sv_admin.nut",
 			"RunOn": "SERVER && MP"
 		},
 		{
